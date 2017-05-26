@@ -4,7 +4,8 @@
   "description": "Eat the Burger",
   "main": "server.js",
   "scripts": {
-    "test": "burger"
+    "test": "burger",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -19,8 +20,9 @@
   "dependencies": {
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
-    "express-handlebars": "^3.0.0",
+    "handlebars": "^4.0.10",
     "method-override": "^2.3.8",
     "mysql": "^2.13.0"
-  }
+  },
+  "devDependencies": {}
 }

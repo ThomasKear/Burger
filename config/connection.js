@@ -1,18 +1,23 @@
 var mysql = require("mysql");
 
 var connection = mysql.createConnection({
-    host: "127.0.0.1",
-    port: process.env.PORT || 3000,
-    user: "root",
-    password: "caeser",
-    database: "Burger_db"
+    root: 3000,
+    host: 'localhost',
+    user: 'root',
+    password: 'caeser',
+    database: 'burgers_db',
 });
+
+console.log("connection made with connection.js")
 
 // connect to the mysql server and sql database
 connection.connect(function(err) {
     // console.log("Connected as id: "+ connection.threadId);
-    if (err) throw err;
-
+    if (err) {
+        console.log("error connecting: " + err.stack);
+        return;
+    }
+    console.log("connected as id " + connection.threadId)
 });
 
 module.exports = connection;
