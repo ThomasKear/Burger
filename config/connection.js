@@ -1,14 +1,19 @@
 var mysql = require("mysql");
 
-var connection = mysql.createConnection({
-    root: 3000,
-    host: 'localhost',
-    user: 'root',
-    password: 'caeser',
-    database: 'burgers_db',
-});
+var connection;
 
-console.log("connection made with connection.js")
+if(process.env.JAWSDB_URL) {
+    connection = mysql.createConnection(process.env.JAWSDB_URL);
+} else {
+    connection = mysql.createConnection({
+        host: 'localhost',
+        user: 'root',
+        password: 'caeser',
+        database: 'Burger_db'
+    });
+};
+
+// console.log("connection made with connection.js")
 
 // connect to the mysql server and sql database
 connection.connect(function(err) {
